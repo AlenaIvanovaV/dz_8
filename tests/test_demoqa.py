@@ -1,12 +1,11 @@
-from selene import have, command
 from selene.support.shared import browser
-from qa_test.models.pages import practice_form
-from qa_test.models.control import dropdown
 
-from qa_test.utils import files
+from qa_test.models.pages import practice_form
+
+
 def test_fill_form(open_browser):
     browser.open('/automation-practice-form')
-    practice_form.type_user('Alena','Ivanova','7927563999','alena@mail.ru')
+    practice_form.type_user('Alena', 'Ivanova', '7927563999', 'alena@mail.ru')
     practice_form.checkbox_select('Sports')
     practice_form.select_state('NCR')
     practice_form.select_city('Delhi')
@@ -30,6 +29,3 @@ def test_fill_form(open_browser):
             ('State', 'NCR Delhi'),
         ],
     )
-
-
-
